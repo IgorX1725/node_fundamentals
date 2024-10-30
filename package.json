@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "vitest",
     "dev": "tsx watch src/index.ts",
     "knex": "node --import tsx ./node_modules/.bin/knex",
     "lint": "eslint src db --ext .ts --fix"
@@ -24,7 +24,10 @@
   "devDependencies": {
     "@rocketseat/eslint-config": "^2.2.2",
     "@types/node": "^22.8.2",
+    "@types/supertest": "^6.0.2",
     "eslint": "^8.57.1",
-    "typescript": "^5.6.3"
+    "supertest": "^7.0.0",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.4"
   }
 }
