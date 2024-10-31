@@ -1,7 +1,11 @@
 import { config } from 'dotenv'
 import { z } from 'zod'
 
-config({ path: `.env.${process.env.NODE_ENV}` })
+if (process.env.NODE_ENV === 'test') {
+  config({ path: '.env.test', override: true })
+} else {
+  config()
+}
 
 const envSchema = z.object({
   DATABASE_URL: z.string(),
@@ -10,6 +14,8 @@ const envSchema = z.object({
     .enum(['development', 'test', 'production'])
     .default('development'),
 })
+
+console.log(process.env.DATABASE_URL)
 
 const _env = envSchema.safeParse(process.env)
 
