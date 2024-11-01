@@ -1,5 +1,3 @@
-import 'dotenv/config'
-
 import { knex as knexSetup, Knex } from 'knex'
 import { env } from './env'
 
